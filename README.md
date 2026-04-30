@@ -11,3 +11,4 @@ side project i'm working on that will (hopefully) be able to detect fatigue and 
 * GUI Dashboard
 * model training for detection using given data
 * ARS & transcriptions for word repetition, filler words, etc
+* identification of key features, decision threshold
