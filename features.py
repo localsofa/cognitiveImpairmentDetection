@@ -2,12 +2,26 @@ import librosa
 import numpy as np
 import pandas as pd
 
+
+import torch
+import torchaudio
+import torchaudio.functional as F
+import torchaudio.transforms as T
+# pip install torch torchvision
+# pip install torchaudio
 # https://docs.pytorch.org/audio/stable/tutorials/audio_feature_extractions_tutorial.html
 # data: https://github.com/numediart/EmoV-DB
 
 # load data
 import os
 base_path = r"C:\Users\erwin\OneDrive\Desktop\uni\persönliche projekte\cognitiveImpairmentDetection\data"
+
+# pitch = F.detect_pitch_frequency(SPEECH_WAVEFORM, SAMPLE_RATE)
+
+
+
+
+
 
 def load_emov_db(base_path):
     data = []
@@ -35,6 +49,7 @@ def extract_audio_features(file_path):
 
     # pitch
     spectral_centroid = np.mean(librosa.feature.spectral_centroid(y=y, sr=sr))
+    pitch = F.detect_pitch_frequency() 
 
     # energy
     rms = np.mean(librosa.feature.rms(y=y))
