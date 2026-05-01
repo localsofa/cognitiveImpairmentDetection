@@ -12,7 +12,7 @@ base_path = r"C:\Users\erwin\OneDrive\Desktop\uni\persönliche projekte\cognitiv
 def load_emov_db(base_path):
     data = []
 
-    for label_name, label in [("control", 0), ("delir", 1)]:
+    for label_name, label in [("normal", 0), ("delir", 1)]:
         folder = os.path.join(base_path, label_name)
 
         for file in os.listdir(folder):
@@ -41,6 +41,8 @@ def extract_audio_features(file_path):
 
     # zero crossing rate (speech irregularity)
     zcr = np.mean(librosa.feature.zero_crossing_rate(y))
+
+    # add speech rate; pauses (length of silences; amount); articulation rate 
 
     # return all features
     return {
