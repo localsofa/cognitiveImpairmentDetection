@@ -3,9 +3,10 @@ side project i'm working on that will (hopefully) be able to detect fatigue and 
 
 ## Current Features:
 * features.py: extracts acoustic / statistic features & adds them to a dataframe
+    * speech rate; articulation rate; pause amount; pause length; pitch
 
 ## Data:
-* EmoV-DB dataset (tired; neutral)
+* Self-recorded database
 
 ## Later:
 * GUI Dashboard
