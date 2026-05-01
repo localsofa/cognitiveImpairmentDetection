@@ -42,6 +42,8 @@ def extract_audio_features(file_path):
     # zero crossing rate (speech irregularity)
     zcr = np.mean(librosa.feature.zero_crossing_rate(y))
 
+    tempo = librosa.feature.tempo(y=y, sr=sr)
+
     # add speech rate; pauses (length of silences; amount); articulation rate 
 
     # return all features
@@ -50,7 +52,8 @@ def extract_audio_features(file_path):
     } | {
         "spectral_centroid": spectral_centroid,
         "rms": rms,
-        "zcr": zcr
+        "zcr": zcr,
+        "tempro": tempo[0]
     }
 
 # build dataset
